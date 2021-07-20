@@ -3,8 +3,16 @@ const rect = require('./rectangle');
 function solveRect(l, w) {
     console.log(`\nSolving for rectangle with dimensions: ${l}, ${w}`);
 
-    console.log(`Area of rectangle: ${rect.area(l, w)}`);
-    console.log(` Perimeter of rectangle: ${rect.perimeter(l, w)}`);
+    rect(l,w, (err, rectangle) => {
+        if (err){
+            console.log('ERROR: ', err.message);
+        } else {
+        console.log(`Area of rectangle: ${rect.area(l, w)}`);
+        console.log(` Perimeter of rectangle: ${rect.perimeter(l, w)}`);
+        }
+    })
+
+
 
 }
 
